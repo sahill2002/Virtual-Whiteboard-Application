@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Whiteboard with Notes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="toolbar">
+      <button class="btn clear-btn" onclick="clearCanvas()">Clear Canvas</button>
+      <button class="btn save-btn" onclick="saveCanvas()">Save Drawing</button>
+      <button class="btn toggle-btn" onclick="toggleEraser()">Toggle Eraser</button>
+      <label for="color" class="label">Color: </label>
+      <input type="color" id="color" value="#000000" class="color-picker">
+      <label for="size" class="label">Brush Size: </label>
+      <input type="range" id="size" min="1" max="20" value="5" class="size-slider">
+    </div>
+
+    <div class="main-content">
+      
+      <canvas id="whiteboard" width="600" height="600"></canvas>
+
+      
+      <div class="notes-section">
+        <h3>Notes</h3>
+        <textarea id="notes" rows="10" placeholder="Write your notes here..."></textarea>
+        <br>
+        <button class="btn save-btn" onclick="saveNotes()">Save Notes</button>
+        <button class="btn clear-btn" onclick="clearNotes()">Clear Notes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
